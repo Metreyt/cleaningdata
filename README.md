@@ -19,8 +19,8 @@ activity\_labels.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;features\_in
 The script should be called as 
 run_analysis("/Users/murtuza/coursera/gettingdata/project/UCI\ HAR\ Dataset")
 
-Alternatively, from the R console one can also do
-setwd("/Users/murtuza/coursera/gettingdata/project/UCI\ HAR\ Dataset")
+Alternatively, from the R console one can also do  
+setwd("/Users/murtuza/coursera/gettingdata/project/UCI\ HAR\ Dataset")  
 run_analysis(getwd())
 
 The output of the script is the cleaned up dataset as required by the
