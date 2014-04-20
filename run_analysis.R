@@ -44,7 +44,7 @@ run_analysis <- function(wd) {
     # Add activity column so that dataset becomes more descriptive
     testDataset <- cbind(activity = testActivityLabels, testDataset)
     trainDataset <- cbind(activity = trainActivityLabels, trainDataset)
-    # Now add subject_id column to our dataset so that we can use it as join key
+    # Now add subject_id column to our dataset
     testDataset <- cbind(subject_id = as.vector(testSubjects$V1), testDataset)
     trainDataset <- cbind(subject_id = as.vector(trainSubjects$V1), trainDataset)
     mergedDataset <<- merge(testDataset[,unique(colnames(testDataset))], trainDataset[,unique(colnames(trainDataset))],all=TRUE)
