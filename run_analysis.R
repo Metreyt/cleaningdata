@@ -56,9 +56,10 @@ run_analysis <- function(wd) {
     mean_std_dataset <<- mergedDataset[,grepl("subject_id|activity|mean\\(\\)|std\\(\\)",colnames(mergedDataset), ignore.case=FALSE)]
 
     # Create molten dataset as a first step for creating the tidy dataset
-    moltenDataset <- melt(mergedDataset,id=c("subject_id","activity"),measure.vars=colnames(mergedDataset)[-(1:2)])
+    moltenDataset <- melt(mean_std_dataset,id=c("subject_id","activity"),measure.vars=colnames(mean_std_dataset)[-(1:2)])
 
     # Create tidy dataset from the molten dataset
     finalDataset <<- dcast(moltenDataset, subject_id + activity ~ variable, mean)
+    write.table(finalDataset, paste(wd, "/result.txt", sep=""), sep="  ")
     finalDataset
 }
